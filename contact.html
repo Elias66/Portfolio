@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device=width, initial-scale=1.0">
+        <title>CONTACT</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
+    <body>
+<!--NAVIGATION-->
+        <nav class="navbar">
+            <a href="index.html"><i class="fas fa-home"></i><span>HOME</span></a>
+            <a href="about.html"><i class="fas fa-user"></i><span>ABOUT</span></a>
+            <a href="exps.html"><i class="fas fa-computer"></i><span>PORTFOLIO</span></a>
+            <a href="contact.html"><i class="fas fa-phone"></i><span>CONTACT</span></a>
+        </nav>
+<!--CONTACT-->
+<div id="contact">
+    <div class="container">
+        <h1 class="heading">CONTACT<span> ME</span></h1>
+        <div class="row">
+            <div class="contact-left">
+                <p><i class="fa-regular fa-envelope"></i>lide.fernandez.up@phinmaed.com</p>
+                <p><i class="fa-solid fa-mobile-screen-button"></i>0945-811-9444</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/elias.fernandez.73700?mibextid=ZbWKwL"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form name="subtmit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2"><b>SUBMIT</b></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwYMaJ8iuFKPMVuHyMlPh607awUvIlw5mIxi76XrFz5bMrg1qlD8hW21GcWNZ470UQu/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+    </body>
+</html>
